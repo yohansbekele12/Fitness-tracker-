@@ -1,3 +1,9 @@
 
-$("grid-container-activity-detail").show();
+$("#home").click(event=>{
+  event.preventDefault();
+  
+
+});
+
+
 

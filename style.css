@@ -35,9 +35,7 @@ a{
     color: rgb(160, 157, 157);
 }
 
-a:hover{
-    color: blanchedalmond;
-}
+
 
 
 .left-bar{
@@ -77,7 +75,7 @@ a:hover{
   
     position: static; 
     margin-top: 40px; 
-    margin-left: 220px;
+    margin-left: 100px;
     width: 50%;
     display: grid;
     grid-template-rows: 1fr 1fr;
@@ -183,6 +181,11 @@ p{
 }
 
 
+.activity-container{
+    display: flex;
+
+    background-color: #ECC4DE;
+}
 @media (max-width:750px) {
-   
+    
 }
