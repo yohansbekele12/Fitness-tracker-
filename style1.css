@@ -6,7 +6,7 @@
 body{
     margin: 0;
     padding: 0;  
-    background-color: #2a2b2a;
+    background-color:#292929;
 }
 
 .outer-container {
@@ -25,10 +25,10 @@ body{
 /* grid managment  */
 
 .main-container{
-    background-color: #161718;
+    background-color: rgba(16,15,20,255);
     display: grid;
-    grid-template-columns: 2fr 5fr 3fr;
-    gap: 10px;
+    grid-template-columns: 1fr 4fr 3fr;
+    gap: 5px;
     border-radius: 15px;    
     
 
@@ -46,10 +46,11 @@ body{
 
 .left{
     
-    background-color: rgb(27, 27, 26);
-    margin: 0;
+    background-color: #1b1b1d;
+    margin: 5px 0;
     padding: 0;
-    width: 170px;
+    width: 200px;
+    border-radius: 15px;
    }
 .menu{
     height: 85vh;
@@ -70,13 +71,14 @@ a{
     font-family: Arial, Helvetica, sans-serif;
     color: rgb(160, 157, 157);
     fill: #e0e0e0;
-    padding: 10px;
+    padding: 10px 30px;
     display: block;
-    
-    
-    
 }
 
+a:hover{
+    color:white;
+    fill: aliceblue;
+}
 li{
   list-style: none;
   margin:0 10px;
@@ -93,7 +95,9 @@ li{
 /* main display  */
 
 .main{
-    background-color: #161718;
+    background-color: rgba(16,15,20,255);
+    display: flex;
+    justify-content: center;
    }
 .main-grid-container{
     width: 90%;               
@@ -107,12 +111,19 @@ li{
     border-radius: 10px;
 }
 .loginfo{
-    background-color: rgb(27, 27, 26);
-    color: aliceblue;
+    background-color: rgba(16,15,20,255);
     font-family: Arial, Helvetica, sans-serif;
     max-height: 50px;
 }
-
+.login img{
+    border-radius: 50%;
+    height: 60px;
+    width: 60px;  
+}
+.login{
+    border-radius: 50%;
+    border: none;
+}
 .smartdisplay{
     
     display: grid;
@@ -140,20 +151,29 @@ li{
     text-align: center;
 }
 
+.activity:hover{
+    transform: scale(1.1); 
+    box-shadow: 0 8px 16px #1b1b1d;; 
+}
 .rundisplay{
     
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 15px;
+
     
 }
 .run{
-    background-color: rgb(27, 27, 26);
+    background-color: #1b1b1d;
     border-radius: 10px;
+    color: aliceblue;
+}
+.run:hover{
+    transform: scale3d(1.03, 0.95, 10);
 }
 
 .wrapper{
-display: flex;
+   display: flex;
    flex-direction: column;
    justify-content: center;
    align-items: center;
@@ -162,20 +182,79 @@ display: flex;
 }
 
 .trainerdisplay{
-    background-color: rgb(27, 27, 26);
+    background-color: #1b1b1d;
+    color: #e0e0e0;
 }
+.trainerdisplay p{
+    color: #e0e0e0;
+    font-size: 25px;
+    
+    
+}
+.trainer-prof{
+    display: flex;
+    margin: 20px 30px;
+}
+.trainer-container{
+    
+    
+}
+#trainer-photo{
+    height: 70px;
+    width: 70px;  
+}
+.progress-display{
+    display: flex;
+    justify-content: center;
+}
+/* Calendar margin arrangement  */
+.Tcalendar{
+ font-size: 13px;
+ color: rgb(149, 149, 150);
+}
+
   
 /* right-display */
 
 .right{
-    background-color: rgb(27, 27, 26);
+    background-color: #1b1b1d;
     margin: 20px;
     }
 
+.right-grid-container{
+    display: grid;
+    grid-row: 5fr 2fr 3fr;
+    gap: 10px;
+    
+}
 
+.graph{
+    display: flex;
+}
+.graph p{
+    color: #e0e0e0;
+    font-size: 25px;
+}
+.TotalTime-container{
+    display: flex;
+}
 
+.activitytracker{
+    background-color: none;
+    padding: 10px;
+    border-radius: 50%;
+    border-color: #bebebe;
+    color:#bebebe; 
+
+}
+.graph{
+    margin-right: 60px;
+}
 /* style class */
 
+.blk{
+    background-color:#232325;
+}
 
 .cs-white{
     color:  linear-gradient(135deg, #ffffff, #e0e0e0);
@@ -199,12 +278,72 @@ display: flex;
     background-color: #E4D2E7;
 }
 
+.svg-green{
+    fill:rgb(116, 175, 116);
+    color: rgb(116, 175, 116);;
+}
+
+.svg-red{
+    color: rgb(241, 90, 21);
+    fill: rgb(241, 90, 21);
+}
 
 p{
     font-size: 15px;
     font-family: Arial, Helvetica, sans-serif;
     margin: 5px 0;
+    color: rgb(110, 111, 112);
 }
+.data{
+    color: #ffffff;
+    fill: #ffffff;;
+}
+
+
+
+
+
+/* symetry css  */
+
+.bar-container {
+    
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+    padding: 4px;
+    box-sizing: border-box;
+    flex-wrap: wrap;
+    gap: 10px; /* Adds space between bars */
+}
+
+.bar-ct {
+    width: 3px;
+    height: 4px;
+    background-color: rgb(41, 40, 39);
+    border-radius: 15px;
+    border: 1px solid rgb(216, 214, 216);
+    display: flex;
+    align-items: flex-end;
+    position: relative;
+    overflow: hidden;
+}
+
+.bar {
+    width: 100%;
+    background-color: aliceblue;
+    border-radius: 15px;
+    transition: height 0.3s ease; /* Smooth transition for height change */
+    position: absolute;
+    bottom: 0;
+}
+
+.percentagedisplay {
+    font-size: larger;
+    color: aliceblue;
+    
+}
+
+
 
 @media (max-width:750px) {
     .left{

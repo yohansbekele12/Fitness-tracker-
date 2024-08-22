@@ -63,8 +63,11 @@
         <symbol id="clock2" viewBox="0 0 16 16">
         <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71z"/>
          </symbol>
-         <symbol id="arrow" viewBox="0 0 16 16">
+         <symbol id="uparrow" viewBox="0 0 16 16">
          <path d="m7.247 4.86-4.796 5.481c-.566.647-.106 1.659.753 1.659h9.592a1 1 0 0 0 .753-1.659l-4.796-5.48a1 1 0 0 0-1.506 0z"/>
+        </symbol>
+        <symbol id="downarrow" viewBox="0 0 16 16">
+          <path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"/>
         </symbol>
         <symbol id="map" viewBox="0 0 16 16">
             <path fill-rule="evenodd" d="M16 .5a.5.5 0 0 0-.598-.49L10.5.99 5.598.01a.5.5 0 0 0-.196 0l-5 1A.5.5 0 0 0 0 1.5v14a.5.5 0 0 0 .598.49l4.902-.98 4.902.98a.5.5 0 0 0 .196 0l5-1A.5.5 0 0 0 16 14.5zM5 14.09V1.11l.5-.1.5.1v12.98l-.402-.08a.5.5 0 0 0-.196 0zm5 .8V1.91l.402.08a.5.5 0 0 0 .196 0L11 1.91v12.98l-.5.1z"/>
@@ -76,13 +79,16 @@
             <path d="M6 .278a.77.77 0 0 1 .08.858 7.2 7.2 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277q.792-.001 1.533-.16a.79.79 0 0 1 .81.316.73.73 0 0 1-.031.893A8.35 8.35 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.75.75 0 0 1 6 .278"/>
             <path d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.73 1.73 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.73 1.73 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.73 1.73 0 0 0 1.097-1.097zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.16 1.16 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.16 1.16 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732z"/>
         </symbol>
+        <symbol id="bell" viewBox="0 0 16 16">
+          <path d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2m.995-14.901a1 1 0 1 0-1.99 0A5 5 0 0 0 3 6c0 1.098-.5 6-2 7h14c-1.5-1-2-5.902-2-7 0-2.42-1.72-4.44-4.005-4.901"/>
+        </symbol>
         </svg>
    <!--  -->
 <div class="outer-container">
 <div class="container">
     <div class="main-container">
         <div class="left display">
-            <div class="logo"><img src="./logo.png" alt="img"></div>
+            <div class="logo"><img src="./img/logo.png" alt="img"></div>
             <div class="menu-container ">
                 <ul class="menu ">
                     <li>
@@ -128,10 +134,10 @@
         <div class="main display">
             <div class="main-grid-container">
                <div class="gridcontainer loginfo">
-                <span class="city">Seattle,</span>
-                <span class="country">United State</span> 
-                <button class="notification">ring </button>
-                <button class="login"><img src="" alt="image"></button>
+                <span class="city data">Seattle,</span>
+                <span class="country data">United State</span> 
+                <button class="notification"><svg class="bi pe-none svg-dark-white me-2 " width="16" height="16" ><use xlink:href="#bell"></use></svg> </button>
+                <button class="login"><img src="./img/profile.jpg" alt="image"></button>
             </div>
             <div class="gridcontainer smartdisplay">
                 <!-- time   -->
@@ -159,44 +165,73 @@
                   <h3>56m</h3>
                 </div>
             </div>
-            <div class="gridcontainer rundisplay">
+      <div class="gridcontainer rundisplay">
                    <!-- runup -->
              <div class="run up">
             <div class="wrapper">
-               <img src="" alt="shoes">
+               <img src="./img/upshoes.jpg" alt="shoes">
                  <p>Contact</p>
-                 <p>17 min <svg class="bi bi-lightning svg-green me-2" width="16" height="16" ><use xlink:href="#arrow"></use></svg></p>
+                 <p class="data contactup">17 min <svg class="bi bi-lightning svg-green me-2" width="16" height="16" ><use xlink:href="#uparrow"></use></svg></p>
                  <p>Flight time</p>
-                 <p>17 min <svg class="bi bi-lightning svg-green me-2" width="16" height="16" ><use xlink:href="#arrow"></use></svg></p>
+                 <p class="data flightup">17 min <svg class="bi bi-lightning svg-red me-2" width="16" height="16" ><use xlink:href="#downarrow"></use></svg></p>
                  <p></p>
              </div>
              </div>
              <!-- run down -->
              <div class="run down">
              <div class="wrapper">
-               <img src="" alt="shoes">
-               <p>Contact</p>
-               <p id="contact">17min </p>
+               <img src="./img/downshoes.jpg" alt="shoes">
+               <p >Contact</p>
+               <p class="data contactdown">17min <svg class="bi bi-lightning svg-green me-2" width="16" height="16" ><use xlink:href="#uparrow"></use></svg></p></p>
                <p>Flight time</p>
-               <p>17 min <svg class="bi bi-lightning svg-green me-2" width="16" height="16" ><use xlink:href="#arrow"></use></svg></p>
+               <p class="data flightdown">17 min <svg class="bi bi-lightning svg-red me-2" width="16" height="16" ><use xlink:href="#downarrow"></use></svg></p></p>
              </div>
              </div>
    
            <!-- symetry -->
              <div class="run symetry">
              <div class="wrapper">
-               <img src="" alt="shoes">
-               <p>Symetry</p>
-               <p>17 min <svg class="bi bi-lightning svg-green me-2" width="16" height="16" ><use xlink:href="#arrow"></use></svg></p>
-               <p>Flight time</p>
-               <p>17 min <svg class="bi bi-lightning svg-green me-2" width="16" height="16" ><use xlink:href="#arrow"></use></svg></p>
-             </div>
+               <img class="runimg" src="./img/symetry.jpg" alt="shoes">
+               
+               <!-- Bar display design-->
+              <div class="bar-container">
+                <div class="bar-ct" style="height: 50px;"><div class="bar"></div></div>
+                <div class="bar-ct" style="height: 30px;"><div class="bar"></div></div>
+                <div class="bar-ct" style="height: 20px;"><div class="bar"></div></div>
+                <div class="bar-ct" style="height: 10px;"><div class="bar"></div></div>
+                <div class="bar-ct" style="height: 5px;"><div class="bar"></div></div>
+                 </div>
+                 <div class="percentagedisplay"></div>
+              </div>
              </div> 
-    </div>
-               <div class="gridcontainer trainerdisplay">dwodjihjwi</div>
+      </div>
+               <div class="gridcontainer trainerdisplay">
+                <div class="trainer-container data">
+                  <div class="trainer-prof">
+                  <img id="trainer-photo" src="./img/trainerPhoto.jpg" alt="img"><p>Running with <span id="trainer-name">Kate <br>
+                    <svg  class="bi bi-calendar-date svg-dark-white me-2" width="16" height="16" ><use xlink:href="#calendar"></use></svg>
+                  </span><span class="Tcalendar"></span><p> 
+                  </div>
+                  <div class="progress-display">
+                    <img src="./img/trainerdivider.jpg" alt="divimg">
+                  </div>
+                </div>
+               </div>
             </div>
         </div>
-        <div class="right display">Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem, qui ratione odit laborum odio a voluptate ducimus illo impedit quis reiciendis saepe mollitia in laboriosam non maiores reprehenderit, modi consectetur.</div>
+       <div class="right display">
+        <div class="right-grid-container">
+        <div class="gridcontainer graph blk">
+           <p >Activity Tracking <button style="margin-left: 60px;" class="activitytracker blk">+</button><br>
+            <span class="Tcalendar"></span></p>
+          <div class="graph">
+           <img  src="./img/calendar.jpg" alt="">
+          </div>
+        </div>
+        <div class="gridcontainer TotalTime-container blk">3</div>
+        <div class="gridcontainer liveupdate-container blk">3</div>
+       </div>
+       </div>
     </div>
 </div>
 

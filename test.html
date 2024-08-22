@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin-top: 100px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: rgb(5, 5, 5);
+        }
+
+        .container {
+            background-color: rgb(41, 40, 39);
+            height: 800px;
+            width: 700px;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .bar-ct {
+            width: 30px;
+            background-color: rgb(41, 40, 39);
+            border-radius: 15px;
+            border: 3px solid rgb(110, 24, 96);
+            display: flex;
+            align-items: flex-end;
+        }
+
+        .bar {
+            width: 100%;
+            background-color: aliceblue;
+            border-radius: 15px;
+            transition: height 0.3s ease; /* Smooth transition for height change */
+        }
+
+        .percentagedisplay {
+            font-size: larger;
+            color: aliceblue;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="bar-ct" style="height: 100px;"><div class="bar"></div></div>
+        <div class="bar-ct" style="height: 80px;"><div class="bar"></div></div>
+        <div class="bar-ct" style="height: 70px;"><div class="bar"></div></div>
+        <div class="bar-ct" style="height: 60px;"><div class="bar"></div></div>
+        <div class="bar-ct" style="height: 50px;"><div class="bar"></div></div>
+        <div class="percentagedisplay"></div>
+    </div>
+
+    <script>
+        const rage = 50;  // Example percentage where you want to hide the bars
+        const percentageDisplay = document.querySelector(".percentagedisplay");
+        const bars = document.querySelectorAll(".bar");
+        const barContainers = document.querySelectorAll(".bar-ct");
+
+        function displayGraph() {
+            // Check if rage is 0, if so, hide the bars
+            if (rage === 0) {
+                bars.forEach(bar => bar.style.height = '0px'); // Hide the bars always remember when you work with que selectore all you are working with array 
+                percentageDisplay.textContent = '0%'; // Display 0% as the percentage
+                return; // Exit the function
+            }
+
+            // Otherwise, set the heights of the bars
+            barContainers.forEach((container, index) => {
+                const containerHeight = container.clientHeight;
+                const bar = container.querySelector(".bar");
+                const barHeight = Math.min(rage / 100 * containerHeight, containerHeight);
+                bar.style.height = `${barHeight}px`; // Set the height of the bar
+            });
+
+            // Update the percentage display
+            percentageDisplay.textContent = `${rage}%`;
+        }
+
+        // Call the function to update the graph
+        displayGraph();
+    </script>
+</body>
+</html>
