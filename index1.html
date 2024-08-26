@@ -87,6 +87,8 @@
 <div class="outer-container">
 <div class="container">
     <div class="main-container">
+
+      <!-- left menu bar  -->
         <div class="left display">
             <div class="logo"><img src="./img/logo.png" alt="img"></div>
             <div class="menu-container ">
@@ -131,14 +133,17 @@
                </ul>
             </div>
         </div>
+        <!-- Center Main display  -->
         <div class="main display">
             <div class="main-grid-container">
-               <div class="gridcontainer loginfo">
+               <div class="gridcontainer loginfo ">
                 <span class="city data">Seattle,</span>
                 <span class="country data">United State</span> 
-                <button class="notification"><svg class="bi pe-none svg-dark-white me-2 " width="16" height="16" ><use xlink:href="#bell"></use></svg> </button>
-                <button class="login"><img src="./img/profile.jpg" alt="image"></button>
+                 <a href="" class="notification "><svg class="bi pe-none none  " width="16" height="16" ><use xlink:href="#bell"></use></svg> </a>
+                <a href="" class="login btn"><img class="log-img" src="./img/profile.jpg" alt="image"></a>
+              
             </div>
+            <!-- Smart Display  -->
             <div class="gridcontainer smartdisplay">
                 <!-- time   -->
                 <div class="activity time cream">
@@ -148,7 +153,7 @@
                 </div>
                 <!-- distance -->
                 <div class="activity distance light-rose">
-                  <svg class="bi bi-map-fill  me-2 " width="16" height="16" ><use xlink:href="#map"></use></svg>
+                  -
                   <p>Total distance</p>
                   <h3 id="distance">15H 5KM</h3>
                 </div>
@@ -165,6 +170,7 @@
                   <h3>56m</h3>
                 </div>
             </div>
+            <!-- Running Statistics  -->
       <div class="gridcontainer rundisplay">
                    <!-- runup -->
              <div class="run up">
@@ -193,7 +199,7 @@
              <div class="wrapper">
                <img class="runimg" src="./img/symetry.jpg" alt="shoes">
                
-               <!-- Bar display design-->
+   <!-- Bar display design-->
               <div class="bar-container">
                 <div class="bar-ct" style="height: 50px;"><div class="bar"></div></div>
                 <div class="bar-ct" style="height: 30px;"><div class="bar"></div></div>
@@ -205,6 +211,8 @@
               </div>
              </div> 
       </div>
+
+      <!--  Trainer Display -->
                <div class="gridcontainer trainerdisplay">
                 <div class="trainer-container data">
                   <div class="trainer-prof">
@@ -219,21 +227,97 @@
                </div>
             </div>
         </div>
+
+        <!-- right grid -->
        <div class="right display">
-        <div class="right-grid-container">
-        <div class="gridcontainer graph blk">
-           <p >Activity Tracking <button style="margin-left: 60px;" class="activitytracker blk">+</button><br>
+        <!-- right rid container  -->
+       <div class="right-grid-container">
+
+        <!-- graph container -->
+       <div class="gridcontainer graph black">
+           <p >Activity Tracking <button style="margin-left: 60px;" class="activitytracker black">+</button><br>
             <span class="Tcalendar"></span></p>
-          <div class="graph">
-           <img  src="./img/calendar.jpg" alt="">
+        
+        <div class="calendar" id="calendars"> </div>
+        <div class="graph">
+          <!-- will create based on data fetch from API -->
+      </div>
+        </div>
+        <!--  TotalTime-container -->
+        <div class="gridcontainer Totals black">
+
+          <!-- Total time analysis for each day in the week  -->
+          <div class="Totaltime-Display black ">
+            <div class="string-container">
+            <svg class="bi bi-clock-fill data " width="16" height="16" ><use xlink:href="#clock2"></use></svg>
+            <p> Total time </p> <br>
+            <span class="totalTime tf data m-3">2 h 45 m</span><br><br>
+          </div>
+          <div class="bar-container ">
+            <div class="d-container">
+            <div class="bar-ct" style="height: 50px;"><div class="bar"></div></div>
+            <div class="date">Mon</div>
+             </div>
+            <div class="d-container">
+            <div class="bar-ct" style="height: 50px;"><div class="bar"></div></div>
+            <div class="date">Tue</div>
+            </div>
+            <div class="d-container">
+              <div class="bar-ct" style="height: 50px;"><div class="bar"></div></div>
+              <div class="date">Wed</div>
+               </div>
+               <div class="d-container">
+                <div class="bar-ct" style="height: 50px;"><div class="bar"></div></div>
+                <div class="date">Thu</div>
+                 </div>
+                 <div class="d-container">
+                  <div class="bar-ct" style="height: 50px;"><div class="bar"></div></div>
+                  <div class="date">Fri</div>
+                   </div>
+                   <div class="d-container">
+                    <div class="bar-ct" style="height: 50px;"><div class="bar"></div></div>
+                    <div class="date">Sun</div>
+                     </div>
+                    </div>
+
+        </div>
+            
+          </div>
+
+          <div class="two-grid-container ">
+          <div class="Totaldistance black ">
+            <div class="string-container m-3">
+              <svg class="bi bi-map data me-2 " width="16" height="16" ><use xlink:href="#map"></use></svg>
+              <p> Total distance </p> <br>
+              <span class="totalDistance tf data m-3 ">10 Km</span><br><br>
+            </div>
+          </div>
+          <div class="Avaragespeed black">
+            <div class="string-container m-3">
+              <svg class="bi bi-fire data fs-1" width="16" height="16" ><use xlink:href="#fire"></use></svg>
+              <p> Total time </p> <br>
+              <span class="AverageSpeed tf data m-3 ">6.1 p/Km</span><br><br>
+            </div>
+            <div class="bar-wrapper ">
+            <div class="bar-container">
+              <div class="bar-ct p-1" style="height: 10px; "><div class="bar"></div></div>
+              <div class="bar-ct p-1" style="height: 20px; "><div class="bar"></div></div>
+              <div class="bar-ct p-1" style="height: 30px; "><div class="bar"></div></div>
+              <div class="bar-ct p-1" style="height: 40px; "><div class="bar"></div></div>
+              <div class="bar-ct p-1" style="height: 50px; "><div class="bar"></div></div>
+              <div class="bar-ct p-1" style="height: 60px; "><div class="bar"></div></div>
+              <div class="bar-ct p-1" style="height: 70px; "><div class="bar"></div></div>
+              <div class="bar-ct p-1" style="height: 80px; "><div class="bar"></div></div>
+               </div>
+              </div>
           </div>
         </div>
-        <div class="gridcontainer TotalTime-container blk">3</div>
-        <div class="gridcontainer liveupdate-container blk">3</div>
+        </div>
+        
        </div>
        </div>
     </div>
-</div>
+    </div>
 
 
     <!--MY script -->

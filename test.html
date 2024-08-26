@@ -3,88 +3,73 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Fitness Activity Analysis</title>
     <style>
+        /* styles.css */
         body {
-            margin-top: 100px;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
             display: flex;
             justify-content: center;
             align-items: center;
-            background-color: rgb(5, 5, 5);
+            height: 100vh;
         }
 
         .container {
-            background-color: rgb(41, 40, 39);
-            height: 800px;
-            width: 700px;
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-end;
+            text-align: center;
+            background-color: #fff;
             padding: 20px;
-            box-sizing: border-box;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
 
-        .bar-ct {
-            width: 30px;
-            background-color: rgb(41, 40, 39);
-            border-radius: 15px;
-            border: 3px solid rgb(110, 24, 96);
-            display: flex;
-            align-items: flex-end;
+        h1 {
+            margin-bottom: 20px;
         }
 
-        .bar {
-            width: 100%;
-            background-color: aliceblue;
-            border-radius: 15px;
-            transition: height 0.3s ease; /* Smooth transition for height change */
-        }
-
-        .percentagedisplay {
-            font-size: larger;
-            color: aliceblue;
-            margin-top: 20px;
+        #fitnessChart {
+            max-width: 800px;
+            margin: 0 auto;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <div class="bar-ct" style="height: 100px;"><div class="bar"></div></div>
-        <div class="bar-ct" style="height: 80px;"><div class="bar"></div></div>
-        <div class="bar-ct" style="height: 70px;"><div class="bar"></div></div>
-        <div class="bar-ct" style="height: 60px;"><div class="bar"></div></div>
-        <div class="bar-ct" style="height: 50px;"><div class="bar"></div></div>
-        <div class="percentagedisplay"></div>
+        <h1>Fitness Activity Analysis</h1>
+        <canvas id="fitnessChart"></canvas>
     </div>
-
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script>
-        const rage = 50;  // Example percentage where you want to hide the bars
-        const percentageDisplay = document.querySelector(".percentagedisplay");
-        const bars = document.querySelectorAll(".bar");
-        const barContainers = document.querySelectorAll(".bar-ct");
-
-        function displayGraph() {
-            // Check if rage is 0, if so, hide the bars
-            if (rage === 0) {
-                bars.forEach(bar => bar.style.height = '0px'); // Hide the bars always remember when you work with que selectore all you are working with array 
-                percentageDisplay.textContent = '0%'; // Display 0% as the percentage
-                return; // Exit the function
-            }
-
-            // Otherwise, set the heights of the bars
-            barContainers.forEach((container, index) => {
-                const containerHeight = container.clientHeight;
-                const bar = container.querySelector(".bar");
-                const barHeight = Math.min(rage / 100 * containerHeight, containerHeight);
-                bar.style.height = `${barHeight}px`; // Set the height of the bar
+        // script.js
+        document.addEventListener('DOMContentLoaded', function() {
+            const ctx = document.getElementById('fitnessChart').getContext('2d');
+            
+            const fitnessChart = new Chart(ctx, {
+                type: 'line', // You can change this to 'bar', 'radar', etc.
+                data: {
+                    labels: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'], // X-axis labels
+                    datasets: [{
+                        label: 'Steps Taken',
+                        data: [3000, 5000, 7000, 10000, 12000, 15000, 18000], // Data points
+                        backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                        borderColor: 'rgba(75, 192, 192, 1)',
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    scales: {
+                        x: {
+                            beginAtZero: true
+                        },
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
             });
-
-            // Update the percentage display
-            percentageDisplay.textContent = `${rage}%`;
-        }
-
-        // Call the function to update the graph
-        displayGraph();
+        });
     </script>
 </body>
 </html>

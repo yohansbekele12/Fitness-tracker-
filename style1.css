@@ -102,7 +102,7 @@ li{
 .main-grid-container{
     width: 90%;               
     display: grid;
-    grid-template-rows: 1fr 4fr 2fr 3fr;
+    grid-template-rows: 0.1fr 4fr 2fr 3fr;
     row-gap: 15px;
     
     
@@ -110,20 +110,18 @@ li{
 .gridcontainer{
     border-radius: 10px;
 }
+
+/* log in container  */
+
 .loginfo{
     background-color: rgba(16,15,20,255);
     font-family: Arial, Helvetica, sans-serif;
-    max-height: 50px;
+    display: flex;
+    height: 40px;
+   
 }
-.login img{
-    border-radius: 50%;
-    height: 60px;
-    width: 60px;  
-}
-.login{
-    border-radius: 50%;
-    border: none;
-}
+
+
 .smartdisplay{
     
     display: grid;
@@ -223,13 +221,14 @@ li{
 
 .right-grid-container{
     display: grid;
-    grid-row: 5fr 2fr 3fr;
-    gap: 10px;
+    grid-row: 1fr 1fr;
+    gap: 15px;
     
 }
 
 .graph{
     display: flex;
+    height: 400px;
 }
 .graph p{
     color: #e0e0e0;
@@ -248,11 +247,75 @@ li{
 
 }
 .graph{
-    margin-right: 60px;
+   
+    display: flex;
+    flex-direction: column;
+    
 }
-/* style class */
+.date-list{
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
 
-.blk{
+.date-list-container{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.date-list-container li{
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.date-list-container  p{
+  font-size: 15px;
+  color: #ccc6c6;
+}
+
+
+/* gridcontainer Total-container */
+
+.Totals{
+    display: grid;
+    grid-template-rows: 2fr 1fr;
+    gap: 10px;
+    
+    
+}
+.two-grid-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr ;
+    
+}
+
+.Totaltime-Display{
+  border-radius: 15px;
+  margin: 10px;
+}
+
+
+.Avaragespeed{
+    width: 200px;
+    border-radius: 15px;
+}
+.Totaldistance{
+    width: 200px;
+    border-radius: 15px;
+}
+.bar-wrapper{
+    
+    height: 150px;
+    display: flex;
+    align-items: end;
+}
+
+
+/* custom style class */
+
+/* custom colors  */
+
+.black{
     background-color:#232325;
 }
 
@@ -288,10 +351,24 @@ li{
     fill: rgb(241, 90, 21);
 }
 
+/* custom font  */
+
+/* total class font for retried data  */
+.tf{     
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+}
+.bi-fire ,.bi-map  {
+    width: 26px;  /* Adjust size */
+    height: 26px; /* Adjust size */
+}
+
 p{
+    display: inline-block;
     font-size: 15px;
     font-family: Arial, Helvetica, sans-serif;
-    margin: 5px 0;
+    margin: 5px 0 5px 5px ;
     color: rgb(110, 111, 112);
 }
 .data{
@@ -299,7 +376,94 @@ p{
     fill: #ffffff;;
 }
 
+.m-r-3{
+    margin-right: 20px;
+}
+.m-1{
+    margin-left: 5px;
+}
 
+.m-2{
+    margin-left: 15px;
+}
+.m-3{
+    margin-left: 20px;
+}
+.m-t-3{
+    margin-top: 20px;
+}
+
+.p-1{
+    padding-left: 10px;
+}
+/* Total time of the week bars  */
+.days{
+    display: flex;
+    gap: 5px;
+}
+.date{
+    display: flex;
+    justify-content: center;
+    width: 50px;
+    height: 20px;
+    margin-top: 10px;
+    font-size: 14px;
+    color: #cccccc;
+    transition: box-shadow 0.3s ease;  /* Smooth transition */
+}
+
+.date:hover{
+    background-color: #444444;
+    cursor: pointer;
+    box-shadow: 6px 6px 10px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    
+}
+.bar-container {
+    
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+    padding: 4px;
+    box-sizing: border-box;
+    gap: 10px; /* Adds space between bars */
+}
+/* calender */
+.calendar {
+    display: flex;
+    gap: 10px;
+}
+
+.day {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding:10px;
+    border-radius: 8px;
+    transition: background-color 0.3s;
+}
+
+
+.day-name {
+    font-size: 14px;
+    color: #cccccc;
+}
+
+.day-date {
+    font-size: 18px;
+    margin-top: 5px;
+    color: #cccccc;
+}
+
+.selected {
+    background-color: #333333;
+    color: #ffffff;
+}
+
+.day:hover {
+    background-color: #444444;
+    cursor: pointer;
+}
 
 
 
@@ -312,11 +476,21 @@ p{
     align-items: flex-end;
     padding: 4px;
     box-sizing: border-box;
-    flex-wrap: wrap;
     gap: 10px; /* Adds space between bars */
 }
 
 .bar-ct {
+    width: 3px;
+    height: 4px;
+    background-color: rgb(41, 40, 39);
+    border-radius: 15px;
+    border: 1px solid rgb(216, 214, 216);
+    display: flex;
+    align-items: flex-end;
+    position: relative;
+    overflow: hidden;
+}
+.bar-energy {
     width: 3px;
     height: 4px;
     background-color: rgb(41, 40, 39);
